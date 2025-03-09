@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-400 h-screen bg-gradient-to-b bg-[#121212] font-sans text-slate-300">
+        <div className="fixed left-0 top-0 -z-10 h-full w-full">
+          {/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> */}
+          <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+        </div>
+
+        <nav
+          className={`fixed left-0 top-0 w-full  h20 bg-[#121212] p-5 transition-shadow ease-in-out delay-1000 duration-1000 shadow-blue-400 shadow`}
+        >
+          <ul
+            className={`flex justify-between w-2/4 mx-auto transition-colors ease-in-out delay-100 duration-1000 font-light text-stone-300`}
+          >
+            <li>
+              <Link href="/">HabitMeister</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/pricing">Pricing</Link>
+            </li>
+            <li>
+              <Link href="/feature-requests">Feature requests</Link>
+            </li>
+          </ul>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
