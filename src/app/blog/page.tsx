@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className="max-w-4xl mx-auto p-5 shadow-md rounded-lg mt-24">
+    <div>
       <h1 className="text-3xl font-bold text-center my-6">
         Healthy Habits: Simple Changes for a Better Life
       </h1>

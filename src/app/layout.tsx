@@ -38,12 +38,18 @@ export default function RootLayout({
             <li>
               <Link href="/pricing">Pricing</Link>
             </li>
+
             <li>
               <Link href="/feature-requests">Feature requests</Link>
             </li>
+            <li>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+            </li>
           </ul>
         </nav>
-        {children}
+        <div className="max-w-4xl mx-auto p-5 shadow-md rounded-lg mt-24">
+          {children}
+        </div>
       </body>
     </html>
   );
