@@ -24,7 +24,7 @@ export default function Home() {
         />
       </div>
       <h2 className="text-2xl font-normal mb-8 mt-20 text-center">
-        Improve your life one habit at a time
+        Create impactful habits one at a time
       </h2>
 
       <div className="container mx-auto flex justify-center">
