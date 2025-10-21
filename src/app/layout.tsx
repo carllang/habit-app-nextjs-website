@@ -24,7 +24,7 @@ export default function RootLayout({
         </div>
 
         <nav
-          className={`fixed left-0 top-0 w-full  h20 bg-[#121212] p-5 transition-shadow ease-in-out delay-1000 duration-1000 shadow-blue-400 shadow`}
+          className={`fixed left-0 top-0 w-full  h20 bg-[#121212] p-5 transition-shadow ease-in-out delay-1000 duration-1000 `}
         >
           <ul
             className={`flex justify-between w-2/4 mx-auto transition-colors ease-in-out delay-100 duration-1000 font-light text-stone-300`}
