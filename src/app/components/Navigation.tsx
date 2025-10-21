@@ -60,35 +60,35 @@ export default function Navigation() {
           </button>
           <Link
             href="/"
-            className="text-2xl font-medium hover:text-white"
+            className="text-2xl font-medium px-6 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
             onClick={toggleMobileMenu}
           >
             HabitMeister
           </Link>
           <Link
             href="/blog"
-            className="text-xl hover:text-white"
+            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
             onClick={toggleMobileMenu}
           >
             Blog
           </Link>
           <Link
             href="/pricing"
-            className="text-xl hover:text-white"
+            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
             onClick={toggleMobileMenu}
           >
             Pricing
           </Link>
           <Link
             href="/feature-requests"
-            className="text-xl hover:text-white"
+            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
             onClick={toggleMobileMenu}
           >
             Feature requests
           </Link>
           <Link
             href="/privacy-policy"
-            className="text-xl hover:text-white"
+            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
             onClick={toggleMobileMenu}
           >
             Privacy Policy
@@ -101,27 +101,42 @@ export default function Navigation() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center justify-between space-x-8 lg:space-x-12">
             <li className="flex-shrink-0">
-              <Link href="/" className="text-lg font-medium hover:text-white">
+              <Link
+                href="/"
+                className="text-lg font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+              >
                 HabitMeister
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-white">
+              <Link
+                href="/blog"
+                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+              >
                 Blog
               </Link>
             </li>
             <li>
-              <Link href="/pricing" className="hover:text-white">
+              <Link
+                href="/pricing"
+                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+              >
                 Pricing
               </Link>
             </li>
             <li>
-              <Link href="/feature-requests" className="hover:text-white">
+              <Link
+                href="/feature-requests"
+                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+              >
                 Feature requests
               </Link>
             </li>
             <li>
-              <Link href="/privacy-policy" className="hover:text-white">
+              <Link
+                href="/privacy-policy"
+                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+              >
                 Privacy Policy
               </Link>
             </li>
