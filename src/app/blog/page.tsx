@@ -52,7 +52,7 @@ export default function Page() {
         <h2 className="text-2xl font-semibold ">5. Take Breaks</h2>
         <p>
           Short breaks throughout the day can improve your productivity and
-          reduce stress. Whether it's stepping away from your desk for a
+          reduce stress. Whether it&apos;s stepping away from your desk for a
           five-minute walk or taking time to meditate, these small pauses can
           make a big difference.
         </p>
