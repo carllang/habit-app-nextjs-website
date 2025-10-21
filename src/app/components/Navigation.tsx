@@ -1,8 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
+
   const toggleMobileMenu = () => {
     const menu = document.getElementById("mobile-menu");
     menu?.classList.toggle("hidden");
@@ -60,35 +65,55 @@ export default function Navigation() {
           </button>
           <Link
             href="/"
-            className="text-2xl font-medium px-6 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+            className={`text-2xl font-medium px-6 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+              isActive("/")
+                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                : ""
+            }`}
             onClick={toggleMobileMenu}
           >
             HabitMeister
           </Link>
           <Link
             href="/blog"
-            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+              isActive("/blog")
+                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                : ""
+            }`}
             onClick={toggleMobileMenu}
           >
             Blog
           </Link>
           <Link
             href="/pricing"
-            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+              isActive("/pricing")
+                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                : ""
+            }`}
             onClick={toggleMobileMenu}
           >
             Pricing
           </Link>
           <Link
             href="/feature-requests"
-            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+              isActive("/feature-requests")
+                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                : ""
+            }`}
             onClick={toggleMobileMenu}
           >
             Feature requests
           </Link>
           <Link
             href="/privacy-policy"
-            className="text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+              isActive("/privacy-policy")
+                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                : ""
+            }`}
             onClick={toggleMobileMenu}
           >
             Privacy Policy
@@ -103,7 +128,11 @@ export default function Navigation() {
             <li className="flex-shrink-0">
               <Link
                 href="/"
-                className="text-lg font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+                className={`text-lg font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                  isActive("/")
+                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    : ""
+                }`}
               >
                 HabitMeister
               </Link>
@@ -111,7 +140,11 @@ export default function Navigation() {
             <li>
               <Link
                 href="/blog"
-                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                  isActive("/blog")
+                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    : ""
+                }`}
               >
                 Blog
               </Link>
@@ -119,7 +152,11 @@ export default function Navigation() {
             <li>
               <Link
                 href="/pricing"
-                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                  isActive("/pricing")
+                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    : ""
+                }`}
               >
                 Pricing
               </Link>
@@ -127,7 +164,11 @@ export default function Navigation() {
             <li>
               <Link
                 href="/feature-requests"
-                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                  isActive("/feature-requests")
+                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    : ""
+                }`}
               >
                 Feature requests
               </Link>
@@ -135,7 +176,11 @@ export default function Navigation() {
             <li>
               <Link
                 href="/privacy-policy"
-                className="px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                  isActive("/privacy-policy")
+                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    : ""
+                }`}
               >
                 Privacy Policy
               </Link>
