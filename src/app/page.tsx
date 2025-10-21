@@ -1,14 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import TypewriterEffect from "./components/TypewriterEffect";
 
 export default function Home() {
   return (
     <section className="container mx-auto">
-      <h1
-        className={`mt-60 text-center text-lg sm:text-2xl font-bold text-slate-300 animate-slidein3`}
-      >
-        Welcome to HabitMeister.
-      </h1>
+      <div className="container mx-auto w-1/2 relative">
+        <div className="absolute w-full bottom-12">
+          <TypewriterEffect />
+        </div>
+      </div>
+      <div className="mt-60">
+        <h1
+          className={`text-center text-lg sm:text-2xl font-bold text-slate-300 animate-slidein3`}
+        >
+          Welcome to HabitMeister.
+        </h1>
+      </div>
       <div className="container mx-auto w-1/2">
         <h2 className="mt-2 text-center text-5xl font-extrabold bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-green-500 animate-slidein2">
           Build Better Habits
