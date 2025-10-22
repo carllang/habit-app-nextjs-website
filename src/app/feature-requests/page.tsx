@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Page() {
+  console.log(
+    "reCAPTCHA key being used:",
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  );
+
   const [formData, setFormData] = useState({
     email: "",
     title: "",
