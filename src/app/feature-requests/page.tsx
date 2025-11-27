@@ -4,11 +4,6 @@ import { useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Page() {
-  console.log(
-    "reCAPTCHA key being used:",
-    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-  );
-
   const [formData, setFormData] = useState({
     email: "",
     title: "",
@@ -65,8 +60,8 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 pt-20 pb-40 max-w-2xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">Feature Requests</h1>
+    <main className="flex flex-col items-center justify-center px-4 py-8 mt-20 pb-40 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold mb-8">Feature Requests</h1>
       <p className="text-gray-300 mb-8 text-center">
         Help us make HabitMeister better! Share your ideas for new features or
         improvements.
@@ -150,7 +145,7 @@ export default function Page() {
 
         <button
           type="submit"
-          className="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-gray-200 shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-colors duration-200"
+          className="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-gray-400 shadow-sm hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 transition-colors duration-200"
         >
           Submit Feature Request
         </button>
@@ -165,6 +160,6 @@ export default function Page() {
           </p>
         )}
       </form>
-    </div>
+    </main>
   );
 }

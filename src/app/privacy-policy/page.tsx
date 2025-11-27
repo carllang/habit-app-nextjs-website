@@ -9,8 +9,8 @@ const PrivacyPolicy = () => {
         <meta name="description" content="Privacy Policy for HabitMeister" />
       </Head>
 
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
+      <main className="container mx-auto px-4 py-8 mt-20 max-w-4xl">
+        <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
         <p className="text-sm text-gray-500">
           Effective Date: [Insert Date] | Last Updated: [Insert Date]
         </p>

@@ -1,8 +1,8 @@
 export default function Page() {
   return (
-    <div className="py-8 px-4 text-white mt-20">
-      <h1 className="text-center text-3xl font-bold mb-6">Pricing Plans</h1>
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+    <main className="py-8 px-4 mt-20 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold mb-8 text-center">Pricing Plans</h1>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <PricingTier
           title="Free"
           price="$0"
@@ -23,8 +23,8 @@ export default function Page() {
           ]}
           highlighted={true}
         />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
@@ -42,7 +42,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
   highlighted = false,
 }) => {
   return (
-    <div
+    <article
       className={`border ${
         highlighted ? "border-blue-500" : "border-gray-300"
       } rounded-lg p-4 shadow-md`}
@@ -75,6 +75,6 @@ const PricingTier: React.FC<PricingTierProps> = ({
       >
         Choose Plan
       </button>
-    </div>
+    </article>
   );
 };
