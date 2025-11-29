@@ -60,7 +60,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center px-4 py-8 mt-20 pb-40 max-w-4xl mx-auto">
+    <main className="flex flex-col items-center justify-center px-4 py-8 mt-20 pb-40 max-w-lg mx-auto">
       <h1 className="text-3xl font-bold mb-8">Feature Requests</h1>
       <p className="text-gray-300 mb-8 text-center">
         Help us make HabitMeister better! Share your ideas for new features or

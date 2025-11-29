@@ -57,11 +57,19 @@ const PrivacyPolicy = () => {
             2.3 Payment Data (RevenueCat)
           </h3>
           <p>
-            If you purchase a subscription or in-app purchase, payments are
-            processed through Google Play Billing and managed by RevenueCat. We
-            do not store payment details such as credit card information, but
-            RevenueCat may collect transaction metadata (e.g., purchase history,
-            subscription status).
+            If you purchase a subscription (Monthly Premium, Yearly Premium, or
+            Lifetime) or in-app purchase, payments are processed through Google
+            Play Billing and managed by RevenueCat. We do not store payment
+            details such as credit card information, but RevenueCat may collect
+            transaction metadata (e.g., purchase history, subscription status).
+          </p>
+          <p className="mt-4">
+            For customers in the United Kingdom, prices shown on this website
+            are presented in GBP and should be considered as display prices. App
+            stores (Google Play / Apple) determine the final charge and may
+            include applicable taxes such as VAT. If VAT applies, it will be
+            collected and shown by the app store at checkout according to the
+            buyer's location and local tax rules.
           </p>
           <p>
             RevenueCat’s Privacy Policy:{" "}
@@ -86,8 +94,10 @@ const PrivacyPolicy = () => {
             <li>To send habit reminders (if enabled).</li>
             <li>
               To process payments and subscriptions (via Google Play &
-              RevenueCat).
+              RevenueCat) for Premium Monthly, Premium Yearly, and Lifetime
+              plans.
             </li>
+            <li>To enable cloud sync for Premium subscribers.</li>
             <li>To improve app performance and user experience.</li>
             <li>To comply with legal obligations.</li>
           </ul>
