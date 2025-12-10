@@ -86,17 +86,6 @@ export default function Navigation() {
             Blog
           </Link>
           <Link
-            href="/pricing"
-            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
-              isActive("/pricing")
-                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
-                : ""
-            }`}
-            onClick={toggleMobileMenu}
-          >
-            Pricing
-          </Link>
-          <Link
             href="/feature-requests"
             className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
               isActive("/feature-requests")
@@ -149,18 +138,7 @@ export default function Navigation() {
                 Blog
               </Link>
             </li>
-            <li>
-              <Link
-                href="/pricing"
-                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
-                  isActive("/pricing")
-                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
-                    : ""
-                }`}
-              >
-                Pricing
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="/feature-requests"

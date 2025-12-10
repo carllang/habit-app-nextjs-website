@@ -1,3 +1,17 @@
+import { redirect } from "next/navigation";
+
+// TEMPORARY: Redirect pricing page to home while pricing is a work-in-progress.
+// To restore the pricing page in the future, remove or comment out the
+// `redirect('/')` call below and restore the original component (the
+// original JSX is preserved in this file as a comment for easy restore).
+export default function Page() {
+  // Redirect users away from the pricing page for now.
+  redirect("/");
+  return null;
+}
+
+/* ORIGINAL PRICING PAGE (keep commented until ready to restore)
+
 export default function Page() {
   return (
     <main className="py-8 px-4 mt-20 max-w-4xl mx-auto">
@@ -68,6 +82,61 @@ export default function Page() {
     </main>
   );
 }
+
+interface PricingTierProps {
+  title: string;
+  price: string;
+  description?: string;
+  features: string[];
+  highlighted?: boolean;
+}
+
+const PricingTier: React.FC<PricingTierProps> = ({
+  title,
+  price,
+  description,
+  features,
+  highlighted = false,
+}) => {
+  return (
+    <article
+      className={`border rounded-lg p-6 shadow-md transition-transform hover:scale-105 flex flex-col ${
+        highlighted ? "border-blue-500 bg-blue-500/10" : "border-gray-300"
+      }`}
+    >
+      <h2
+        className={`text-2xl font-semibold ${
+          highlighted ? "text-blue-400" : "text-gray-200"
+        }`}
+      >
+        {title}
+      </h2>
+      <p className="text-3xl font-bold text-white my-2">{price}</p>
+      {description && (
+        <p className="text-sm text-gray-400 mb-4">{description}</p>
+      )}
+      <ul className="space-y-2 mb-6 flex-grow">
+        {features.map((feature) => (
+          <li key={feature} className="text-gray-300 text-sm flex items-start">
+            <span className="mr-2">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <button
+        className={`w-full py-2 px-4 rounded-lg font-medium transition-colors mt-auto ${
+          highlighted
+            ? "bg-blue-500 text-white hover:bg-blue-600"
+            : "bg-gray-700 text-gray-200 hover:bg-gray-600"
+        }`}
+      >
+        Choose Plan
+      </button>
+    </article>
+  );
+};
+
+*/
 
 interface PricingTierProps {
   title: string;
