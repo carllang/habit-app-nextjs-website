@@ -1,44 +1,55 @@
 import { NextResponse } from "next/server";
+import { addRow } from "@/lib/googleSheets";
 
-export async function POST(request: Request) {
+const verifyRecaptcha = async (token: string) => {
   try {
-    const body = await request.json();
-    const { email, title, description, useCase, recaptchaToken } = body;
-
-    // Verify reCAPTCHA token
-    const recaptchaResponse = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
       {
         method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
       }
     );
 
-    const recaptchaData = await recaptchaResponse.json();
+    const data = await response.json();
+    return data.success;
+  } catch (error) {
+    console.error("Error verifying reCAPTCHA:", error);
+    return false;
+  }
+};
 
-    if (!recaptchaData.success) {
-      return NextResponse.json(
-        { error: "reCAPTCHA verification failed" },
-        { status: 400 }
-      );
+export async function POST(request: Request) {
+  try {
+    const { email, title, description, useCase, recaptchaToken } =
+      await request.json();
+
+    // Verify reCAPTCHA
+    const isValidRecaptcha = await verifyRecaptcha(recaptchaToken);
+    if (!isValidRecaptcha) {
+      return NextResponse.json({ error: "Invalid reCAPTCHA" }, { status: 400 });
     }
 
-    // Here you would typically:
-    // 1. Validate the input
-    // 2. Store the feature request in your database
-    // 3. Maybe send an email notification
-    // For now, we'll just log it
-    console.log("Feature request received:", {
+    // Add to Google Sheet
+    await addRow({
       email,
       title,
       description,
       useCase,
+      timestamp: new Date().toISOString(),
+      status: "New",
     });
 
-    return NextResponse.json({ message: "Feature request received" });
+    return NextResponse.json({
+      message: "Feature request submitted successfully",
+    });
   } catch (error) {
-    console.error("Error processing feature request:", error);
+    console.error("Error handling feature request:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Error submitting feature request" },
       { status: 500 }
     );
   }

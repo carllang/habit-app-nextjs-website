@@ -1,10 +1,10 @@
 export default function Page() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center my-6">
+    <main className="px-4 py-8 mt-20 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold text-center mb-8">
         Healthy Habits: Simple Changes for a Better Life
       </h1>
-      <div className=" space-y-4">
+      <article className="space-y-4">
         <p>
           In the hustle and bustle of modern life, maintaining a healthy
           lifestyle can sometimes feel like a daunting task. However,
@@ -52,11 +52,11 @@ export default function Page() {
         <h2 className="text-2xl font-semibold ">5. Take Breaks</h2>
         <p>
           Short breaks throughout the day can improve your productivity and
-          reduce stress. Whether it's stepping away from your desk for a
+          reduce stress. Whether it&apos;s stepping away from your desk for a
           five-minute walk or taking time to meditate, these small pauses can
           make a big difference.
         </p>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 }

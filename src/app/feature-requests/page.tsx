@@ -60,9 +60,9 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 pt-20 pb-40 max-w-2xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">Feature Requests</h1>
-      <p className="text-gray-600 mb-8 text-center">
+    <main className="flex flex-col items-center justify-center px-4 py-8 mt-20 pb-40 max-w-lg mx-auto">
+      <h1 className="text-3xl font-bold mb-8">Feature Requests</h1>
+      <p className="text-gray-300 mb-8 text-center">
         Help us make HabitMeister better! Share your ideas for new features or
         improvements.
       </p>
@@ -71,7 +71,7 @@ export default function Page() {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-200"
           >
             Email
           </label>
@@ -82,7 +82,7 @@ export default function Page() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-700 rounded-md shadow-sm placeholder-gray-500 text-gray-200 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="your@email.com"
           />
         </div>
@@ -90,7 +90,7 @@ export default function Page() {
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-200"
           >
             Feature Title
           </label>
@@ -101,7 +101,7 @@ export default function Page() {
             required
             value={formData.title}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-700 rounded-md shadow-sm placeholder-gray-500 text-gray-200 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="Brief title for your feature request"
           />
         </div>
@@ -109,7 +109,7 @@ export default function Page() {
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-200"
           >
             Description
           </label>
@@ -120,7 +120,7 @@ export default function Page() {
             value={formData.description}
             onChange={handleChange}
             rows={4}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-700 rounded-md shadow-sm placeholder-gray-500 text-gray-200 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="Describe the feature you'd like to see..."
           />
         </div>
@@ -128,7 +128,7 @@ export default function Page() {
         <div>
           <label
             htmlFor="useCase"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-200"
           >
             Use Case (Optional)
           </label>
@@ -138,14 +138,14 @@ export default function Page() {
             value={formData.useCase}
             onChange={handleChange}
             rows={3}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-700 rounded-md shadow-sm placeholder-gray-500 text-gray-200 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="How would you use this feature?"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-gray-400 shadow-sm hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 transition-colors duration-200"
         >
           Submit Feature Request
         </button>
@@ -160,6 +160,6 @@ export default function Page() {
           </p>
         )}
       </form>
-    </div>
+    </main>
   );
 }
