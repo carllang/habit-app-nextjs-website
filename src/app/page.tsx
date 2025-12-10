@@ -48,9 +48,9 @@ export default function Home() {
             </h3>
             <p className="text-lg text-gray-300 leading-relaxed">
               In a world full of distractions, maintaining positive habits is a
-              challenge. That's why HabitMeister focuses on simplicity and
+              challenge. That&apos;s why HabitMeister focuses on simplicity and
               effectiveness. Start with one habit, master it, then add more.
-              Building a better life doesn't have to be complicated.
+              Building a better life doesn&apos;t have to be complicated.
             </p>
           </div>
         </div>

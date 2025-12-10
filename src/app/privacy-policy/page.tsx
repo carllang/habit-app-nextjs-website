@@ -69,7 +69,7 @@ const PrivacyPolicy = () => {
             stores (Google Play / Apple) determine the final charge and may
             include applicable taxes such as VAT. If VAT applies, it will be
             collected and shown by the app store at checkout according to the
-            buyer's location and local tax rules.
+            buyer&apos;s location and local tax rules.
           </p>
           <p>
             RevenueCat’s Privacy Policy:{" "}
