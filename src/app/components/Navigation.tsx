@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
 
-  const isActive = (path: string) => pathname === path;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isActive = (path: string) => {
+    if (!mounted) return false;
+    // Normalize paths by removing trailing slashes for comparison
+    const normalizedPathname =
+      pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+    const normalizedPath = path === "/" ? "/" : path.replace(/\/$/, "");
+    return normalizedPathname === normalizedPath;
+  };
 
   const toggleMobileMenu = () => {
     const menu = document.getElementById("mobile-menu");
@@ -65,10 +78,8 @@ export default function Navigation() {
           </button>
           <Link
             href="/"
-            className={`text-2xl font-medium px-6 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
-              isActive("/")
-                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
-                : ""
+            className={`text-2xl font-medium px-6 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
+              isActive("/") ? "text-white border border-white/50" : ""
             }`}
             onClick={toggleMobileMenu}
           >
@@ -76,10 +87,8 @@ export default function Navigation() {
           </Link>
           <Link
             href="/blog"
-            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
-              isActive("/blog")
-                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
-                : ""
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
+              isActive("/blog") ? "text-white border border-white/50" : ""
             }`}
             onClick={toggleMobileMenu}
           >
@@ -87,9 +96,9 @@ export default function Navigation() {
           </Link>
           <Link
             href="/feature-requests"
-            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
               isActive("/feature-requests")
-                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                ? "text-white border border-white/50"
                 : ""
             }`}
             onClick={toggleMobileMenu}
@@ -98,9 +107,9 @@ export default function Navigation() {
           </Link>
           <Link
             href="/privacy-policy"
-            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+            className={`text-xl px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
               isActive("/privacy-policy")
-                ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                ? "text-white border border-white/50"
                 : ""
             }`}
             onClick={toggleMobileMenu}
@@ -111,16 +120,14 @@ export default function Navigation() {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="fixed left-0 top-0 z-30 hidden w-full bg-[#121212] p-5 shadow-lg transition-shadow duration-300 ease-in-out md:block">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav className="fixed left-0 top-0 z-30 hidden w-full bg-[#121212] py-5 shadow-lg transition-shadow duration-300 ease-in-out md:block">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center justify-between space-x-8 lg:space-x-12">
             <li className="flex-shrink-0">
               <Link
                 href="/"
-                className={`text-lg font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
-                  isActive("/")
-                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
-                    : ""
+                className={`text-lg font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
+                  isActive("/") ? "text-white border border-white/50" : ""
                 }`}
               >
                 HabitMeister
@@ -129,10 +136,8 @@ export default function Navigation() {
             <li>
               <Link
                 href="/blog"
-                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
-                  isActive("/blog")
-                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
-                    : ""
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
+                  isActive("/blog") ? "text-white border border-white/50" : ""
                 }`}
               >
                 Blog
@@ -142,9 +147,9 @@ export default function Navigation() {
             <li>
               <Link
                 href="/feature-requests"
-                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
                   isActive("/feature-requests")
-                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    ? "text-white border border-white/50"
                     : ""
                 }`}
               >
@@ -154,9 +159,9 @@ export default function Navigation() {
             <li>
               <Link
                 href="/privacy-policy"
-                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] ${
+                className={`px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:border hover:border-white/30 ${
                   isActive("/privacy-policy")
-                    ? "text-white shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
+                    ? "text-white border border-white/50"
                     : ""
                 }`}
               >
